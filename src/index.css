@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+:root {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* ── Deep Night Blue (Dark Mode Premium) ────────────────────
+   * Fondo Base   → #020B1D  (Night Blue)
+   * Texto        → #FFFFFF  (Blanco puro)
+   * Texto Secun  → #94A3B8 / #A0AEC0 (Gris secundario)
+   * Acento       → #0052FF  (Electric Cobalt Neon)
+   * ──────────────────────────────────────────────────────────── */
+  --bg-primary: #020B1D;
+  --color-surface: var(--bg-primary);
+  --color-surface-muted: #051025;
+  --color-surface-card: #0A152C;
+
+  --color-text-primary: #FFFFFF;
+  /* títulos y alta legibilidad */
+  --color-text-dim: #A0AEC0;
+  /* texto secundario / subtítulos */
+  --color-text-muted: #94A3B8;
+  /* placeholders, labels tenues */
+
+  --color-brand: #0052FF;
+  /* azul cobalto eléctrico */
+  --color-brand-dark: #003DCC;
+  /* hover de marca */
+  --color-brand-light: #4D8BFF;
+
+  --color-border: rgba(255, 255, 255, 0.1);
+  /* bordes 1px sutiles tech */
+  --color-border-focus: var(--color-brand);
+
+  /* Sombra tech neon (sin blancos invasivos) */
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 8px 32px rgba(0, 82, 255, 0.1), 0 2px 12px rgba(0, 0, 0, 0.5);
+
+  /* Sombra Glow */
+  --shadow-neon: 0 0 20px rgba(0, 82, 255, 0.5);
+
+  /* Botones Expert Style */
+  --btn-bg: var(--color-brand);
+  --btn-text: #FFFFFF;
+  --btn-radius: 8px;
+  --btn-padding: 12px 24px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    /* #020B1D */
+    color: var(--color-text-primary);
+    /* #FFFFFF */
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Contraste WCAG AAA: #020D21 sobre #FFFFFF → ratio ~18.8:1 ✓ */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-text-primary);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  p,
+  li,
+  span {
+    font-weight: 300;
+    color: var(--color-text-primary);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
+
+/* ── Botones Expert Style ─────────────────────────────────────── */
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--color-brand);
+    color: var(--btn-text);
+    border-radius: 8px;
+    /* smooth rounding */
+    padding: var(--btn-padding);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border: 1px solid transparent;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 82, 255, 0.2);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-brand-light);
+    /* más claro en oscuros resalta más */
+    box-shadow: var(--shadow-neon);
+    /* Neon Glow Effect */
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: var(--color-text-primary);
+    border-radius: 8px;
+    padding: var(--btn-padding);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border: 1px solid var(--color-border);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    /* fondo sutil translúcido */
+    color: #FFFFFF;
+    border-color: var(--color-brand);
+    /* Borde neón sutil */
+    box-shadow: 0 4px 16px rgba(0, 82, 255, 0.15);
+    /* Soft neon */
+    transform: translateY(-2px);
+  }
+}
+
+@layer utilities {
+  .scroll-smooth-bezier {
+    scroll-behavior: smooth;
+    transition: scroll-position 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  /* Hide scrollbar functionality */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+}
