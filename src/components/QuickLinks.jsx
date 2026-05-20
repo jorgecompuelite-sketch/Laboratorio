@@ -16,7 +16,7 @@ const QuickLinks = () => {
             title: "Formato de prescripción",
             icon: <div className="relative">
                 <FileText size={40} className="text-[#0056A4]" />
-                <ArrowRight size={16} className="absolute bottom-0 right-0 text-[#0056A4] bg-white rounded-full p-0.5" />
+                <ArrowRight size={16} className="absolute bottom-0 right-0 text-[#0056A4] bg-transparent rounded-full p-0.5" />
             </div>,
             action: "Diligenciar",
             iconBg: "bg-[#0056A4]/20",
@@ -41,7 +41,7 @@ const QuickLinks = () => {
     ];
 
     return (
-        <section className="py-20 bg-[#020B1D] relative overflow-hidden">
+        <section className="py-20 bg-transparent relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#0056A4]/20 to-transparent" />
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -60,7 +60,7 @@ const QuickLinks = () => {
                             {/* Icon Area */}
                             <div className={`w-20 h-20 rounded-2xl ${card.iconBg} flex items-center justify-center mb-8 transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(0,86,164,0.2)]`}>
                                 {card.isPse ? (
-                                    <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center shadow-lg p-2 overflow-hidden">
+                                    <div className="w-14 h-14 rounded-xl bg-transparent flex items-center justify-center shadow-lg p-2 overflow-hidden">
                                         <img
                                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/PSE_logo_2016.svg/200px-PSE_logo_2016.svg.png"
                                             alt="PSE"

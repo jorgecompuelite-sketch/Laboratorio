@@ -166,16 +166,16 @@ const OfficeCard = ({ office, index }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.04, duration: 0.5 }}
-            className={`bg-white rounded-2xl border ${office.isMain
+            className={`bg-transparent rounded-2xl border ${office.isMain
                 ? 'border-[#020D21] shadow-[0_4px_24px_rgba(2,13,33,0.12)]'
-                : 'border-[#E5E7EB] shadow-[0_2px_10px_rgba(2,13,33,0.05)]'
+                : 'border-white/20 shadow-[0_2px_10px_rgba(2,13,33,0.05)]'
                 } p-5 flex flex-col gap-3 hover:shadow-[0_6px_28px_rgba(2,13,33,0.09)] transition-shadow`}
         >
             {/* Encabezado */}
             <div className="flex items-start justify-between gap-2">
                 <div>
                     <div className="flex items-center gap-2">
-                        <h3 className="font-semibold text-[#020D21] text-base leading-tight">{office.city}</h3>
+                        <h3 className="font-semibold text-white text-base leading-tight">{office.city}</h3>
                         {office.isMain && (
                             <span className="text-[10px] font-semibold text-white bg-[#020D21] rounded-full px-2 py-0.5 leading-none">
                                 PRINCIPAL
@@ -184,26 +184,26 @@ const OfficeCard = ({ office, index }) => {
                     </div>
                     <p className="text-xs text-[#9CA3AF] font-light mt-0.5">{office.type}</p>
                 </div>
-                <MapPin size={16} className="text-[#020D21] flex-shrink-0 mt-0.5" />
+                <MapPin size={16} className="text-white flex-shrink-0 mt-0.5" />
             </div>
 
             {/* Dirección */}
             {office.address && (
-                <p className="text-xs text-[#4B5563] font-light leading-[1.6]">{office.address}</p>
+                <p className="text-xs text-white font-light leading-[1.6]">{office.address}</p>
             )}
 
             {/* Teléfono principal */}
-            <div className="flex items-center gap-2 text-xs text-[#020D21]">
+            <div className="flex items-center gap-2 text-xs text-white">
                 <Phone size={12} className="flex-shrink-0" />
                 <span className="font-medium">{office.phones[0]}</span>
             </div>
 
             {/* Email principal */}
             <div className="flex items-center gap-2 text-xs">
-                <Mail size={12} className="flex-shrink-0 text-[#020D21]" />
+                <Mail size={12} className="flex-shrink-0 text-white" />
                 <a
                     href={`mailto:${office.emails[0]}`}
-                    className="text-[#4B5563] hover:text-[#020D21] transition-colors break-all"
+                    className="text-white hover:text-white transition-colors break-all"
                 >
                     {office.emails[0]}
                 </a>
@@ -214,7 +214,7 @@ const OfficeCard = ({ office, index }) => {
                 <>
                     <button
                         onClick={() => setExpanded(e => !e)}
-                        className="flex items-center gap-1 text-xs text-[#9CA3AF] hover:text-[#020D21] transition-colors mt-1 self-start"
+                        className="flex items-center gap-1 text-xs text-[#9CA3AF] hover:text-white transition-colors mt-1 self-start"
                     >
                         {expanded ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
                         {expanded ? 'Menos' : 'Más contactos'}
@@ -228,15 +228,15 @@ const OfficeCard = ({ office, index }) => {
                             className="space-y-1.5 border-t border-[#F3F4F6] pt-3"
                         >
                             {office.phones.slice(1).map((p, i) => (
-                                <div key={i} className="flex items-center gap-2 text-xs text-[#4B5563]">
+                                <div key={i} className="flex items-center gap-2 text-xs text-white">
                                     <Phone size={11} className="flex-shrink-0" />
                                     <span>{p}</span>
                                 </div>
                             ))}
                             {office.emails.slice(1).map((e, i) => (
                                 <div key={i} className="flex items-center gap-2 text-xs">
-                                    <Mail size={11} className="flex-shrink-0 text-[#4B5563]" />
-                                    <a href={`mailto:${e}`} className="text-[#4B5563] hover:text-[#020D21] transition-colors break-all">{e}</a>
+                                    <Mail size={11} className="flex-shrink-0 text-white" />
+                                    <a href={`mailto:${e}`} className="text-white hover:text-white transition-colors break-all">{e}</a>
                                 </div>
                             ))}
                         </motion.div>
@@ -249,7 +249,7 @@ const OfficeCard = ({ office, index }) => {
 
 /* ─── Página principal ───────────────────────────────────────── */
 const Sucursales = () => (
-    <div className="min-h-screen bg-[#F8F9FA] pt-28 pb-20">
+    <div className="min-h-screen bg-transparent pt-28 pb-20">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
 
             {/* Hero de sección */}
@@ -259,11 +259,11 @@ const Sucursales = () => (
                 transition={{ duration: 0.7 }}
                 className="text-center mb-14"
             >
-                <h1 className="text-4xl md:text-5xl font-semibold text-[#020D21] tracking-tight mb-4">
+                <h1 className="text-4xl md:text-5xl font-semibold text-white tracking-tight mb-4">
                     Nuestras Sucursales
                 </h1>
                 <div className="w-16 h-0.5 bg-[#020D21] mx-auto mb-6" />
-                <p className="text-[#4B5563] text-lg font-light max-w-xl mx-auto leading-[1.7]">
+                <p className="text-white text-lg font-light max-w-xl mx-auto leading-[1.7]">
                     Presentes en las principales ciudades de Colombia, listos para atenderte.
                 </p>
                 <p className="text-sm text-[#9CA3AF] mt-2 font-light">

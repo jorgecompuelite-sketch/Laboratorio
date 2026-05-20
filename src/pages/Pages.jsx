@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const PageLayout = ({ title, children }) => {
     return (
-        <div className="pt-24 pb-20 min-h-screen bg-[#020B1D]">
+        <div className="pt-40 pb-20 min-h-screen bg-transparent">
             <div className="container mx-auto px-4 md:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -73,115 +73,159 @@ export const Blog = () => (
 
 export const PoliticasGarantia = () => (
     <PageLayout title="Políticas y Garantías">
-        <div className="space-y-10">
+        <div className="space-y-12 bg-[#05112B]/60 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.3)]">
             <section>
-                <p className="text-white font-bold mb-4">POLÍTICAS LABORATORIO DENTAL LUIS MILANES</p>
-                <p className="text-justify leading-relaxed text-[#94A3B8] mb-4">
-                    En atención al Estatuto del Consumidor (Ley 1480 de 2011) presentamos a todos nuestros clientes y futuros clientes lo concerniente a las políticas sobre las garantías, cambios y devoluciones que se pueden presentar al momento de la prestación del servicio.
+                <h2 className="text-3xl font-extrabold text-white mb-6 border-b border-[#4DA8DA]/30 pb-4">Políticas de Garantía y Devoluciones</h2>
+                <p className="text-justify leading-relaxed text-white/95 text-lg mb-5 drop-shadow-sm">
+                    En cumplimiento con el <span className="text-[#4DA8DA] font-bold">Estatuto del Consumidor (Ley 1480 de 2011)</span>, en LABORATORIO DENTAL LUIS MILANÉS S.A.S. presentamos a nuestros clientes y aliados estratégicos las políticas institucionales que rigen nuestras garantías, cambios y devoluciones derivadas de la prestación de nuestros servicios.
                 </p>
-                <p className="text-justify leading-relaxed text-[#94A3B8] mb-4">
-                    El <span className="text-white font-semibold">LABORATORIO DENTAL LUIS MILANES S.A.S.</span> adquiere una obligación de medio, es decir, la garantía se otorga no por el resultado, sino por las condiciones de calidad e idoneidad en la prestación del servicio, conforme lo establece la normatividad colombiana, por lo tanto, en todo momento se deberá tener en cuenta las condiciones de calidad e idoneidad en la prestación del servicio.
+                <p className="text-justify leading-relaxed text-white/95 text-lg mb-5 drop-shadow-sm">
+                    Nuestra organización adquiere una <span className="text-[#4DA8DA] font-bold">obligación de medio</span>; esto significa que la garantía se otorga bajo estrictas condiciones de calidad e idoneidad durante la prestación del servicio, y no por el resultado final subjetivo, conforme a la normatividad colombiana.
                 </p>
-                <p className="text-justify leading-relaxed text-[#94A3B8]">
-                    Los materiales e insumos empleados en el desarrollo de los procedimientos y servicios ofrecidos por el LABORATORIO DENTAL LUIS MILANES S.A.S., son productos de calidad y son operados por profesionales capacitados, con amplia experiencia en el sector de la odontología.
+                <p className="text-justify leading-relaxed text-white/95 text-lg drop-shadow-sm">
+                    Todos los materiales e insumos empleados en el desarrollo de nuestros procedimientos superan altos estándares de calidad y son manipulados por profesionales técnicos con amplia experiencia en el sector odontológico.
                 </p>
             </section>
 
             <section>
-                <h2 className="text-2xl font-bold text-white mb-6 border-b border-[#0D3690]/30 pb-3">TÉRMINOS DE GARANTÍA</h2>
+                <h2 className="text-2xl font-bold text-white mb-6 border-b border-[#4DA8DA]/30 pb-3">1. Términos de Garantía por Material</h2>
+                <p className="text-white/95 text-lg mb-6 drop-shadow-sm">
+                    Los periodos de cobertura de nuestras prótesis dentales se contabilizan <span className="text-[#4DA8DA] font-bold">a partir de la fecha de salida del laboratorio</span>. Las coberturas varían según la naturaleza y resistencia técnica del material utilizado:
+                </p>
 
-                <div className="space-y-6">
-                    <div>
-                        <h3 className="text-xl font-bold text-[#0D3690] mb-3">GARANTIA EN ZIRCONIO</h3>
-                        <p className="text-[#94A3B8] mb-3">Las prótesis dentales en zirconio cuentan con garantía por fractura, según el tipo de material utilizado:</p>
-                        <ul className="list-disc pl-6 space-y-2 text-[#94A3B8]">
-                            <li><span className="text-white">Zirconio Tiger:</span> 1 año de garantía.</li>
-                            <li><span className="text-white">Zirconio ZR7:</span> 2 años de garantía.</li>
-                            <li><span className="text-white">Zirconio Zir Luxor:</span> 3 años de garantía.</li>
-                        </ul>
-                        <p className="text-sm text-[#94A3B8] mt-3 italic">El período de garantía se contabiliza a partir de la fecha de salida del laboratorio.</p>
-                        <p className="text-sm bg-red-500/10 border border-red-500/20 p-3 rounded-lg text-red-200 mt-4">
-                            En caso de presentarse accidentes tales como fracturas ocasionadas por caídas o manipulación inadecuada, la garantía se verá afectada. Para continuar con el proceso será necesario remitir una nueva prescripción y realizar el pago correspondiente.
+                <h3 className="text-xl font-bold text-[#4DA8DA] mb-4">1.1 Cuadro Resumen de Coberturas</h3>
+                <div className="overflow-x-auto mb-8 bg-black/40 border border-white/10 rounded-2xl shadow-xl">
+                    <table className="w-full text-left border-collapse">
+                        <thead>
+                            <tr className="bg-[#4DA8DA]/20 border-b border-white/10">
+                                <th className="p-4 text-white font-semibold">Tipo de Material</th>
+                                <th className="p-4 text-white font-semibold">Subcategoría / Marca</th>
+                                <th className="p-4 text-white font-semibold">Período</th>
+                                <th className="p-4 text-white font-semibold">Condiciones de Cobertura</th>
+                            </tr>
+                        </thead>
+                        <tbody className="text-white/90 text-sm">
+                            <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td className="p-4 font-bold text-white" rowSpan="3">Zirconio</td>
+                                <td className="p-4">Zir Luxor</td>
+                                <td className="p-4 font-bold text-[#4DA8DA]">3 Años</td>
+                                <td className="p-4">Fractura técnica de fabricación.</td>
+                            </tr>
+                            <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td className="p-4">ZR7</td>
+                                <td className="p-4 font-bold text-[#4DA8DA]">2 Años</td>
+                                <td className="p-4">Fractura técnica de fabricación.</td>
+                            </tr>
+                            <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td className="p-4">Tiger</td>
+                                <td className="p-4 font-bold text-[#4DA8DA]">1 Año</td>
+                                <td className="p-4">Fractura técnica de fabricación.</td>
+                            </tr>
+                            <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td className="p-4 font-bold text-white">Metal Porcelana</td>
+                                <td className="p-4">Ceramco3, Vita Máster, Vita VM13</td>
+                                <td className="p-4 font-bold text-[#4DA8DA]">1 Año</td>
+                                <td className="p-4">Fallas técnicas de color, adaptación o morfología.</td>
+                            </tr>
+                            <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td className="p-4 font-bold text-white">Disilicato de Litio</td>
+                                <td className="p-4">Inyectado o Fresado</td>
+                                <td className="p-4 font-bold text-[#4DA8DA]">A Satisfacción</td>
+                                <td className="p-4">Fallas de fabricación. Frágil antes de la cementación.</td>
+                            </tr>
+                            <tr className="hover:bg-white/5 transition-colors">
+                                <td className="p-4 font-bold text-white">Otros Materiales</td>
+                                <td className="p-4">Cerómero, PMMA, Resinas, Placas, Cubetas, Núcleos</td>
+                                <td className="p-4 font-bold text-red-400">Sin Garantía</td>
+                                <td className="p-4">Sujetos a desgaste natural, cuidado o limitaciones del patrón.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 className="text-xl font-bold text-[#4DA8DA] mb-4">1.2 Condiciones de Exclusión de Materiales</h3>
+                <div className="space-y-4">
+                    <div className="bg-red-950/40 border border-red-500/30 p-5 rounded-xl shadow-inner">
+                        <h4 className="text-red-300 font-bold mb-2">Pérdida de Garantía por Manipulación</h4>
+                        <p className="text-white/90 text-sm leading-relaxed">
+                            En caso de presentarse accidentes como fracturas ocasionadas por caídas o manipulación inadecuada por parte del personal clínico o del paciente, la garantía quedará anulada. Para reiniciar el proceso, será indispensable remitir una nueva prescripción y realizar el pago correspondiente.
                         </p>
                     </div>
-
-                    <div>
-                        <h3 className="text-xl font-bold text-[#0056A4] mb-3">GARANTIA EN METAL PORCELANA</h3>
-                        <p className="text-[#94A3B8] mb-3">Las prótesis en Metal Porcelana se entregan a satisfacción y cuentan con una garantía de un (1) año en los siguientes materiales:</p>
-                        <ul className="list-disc pl-6 space-y-1 text-[#94A3B8]">
-                            <li>Metal Porcelana Ceramco3 Dentsply</li>
-                            <li>Metal Porcelana Vita Máster</li>
-                            <li>Metal Porcelana Vita VM13</li>
-                        </ul>
-                        <p className="text-[#94A3B8] mt-3">Si se presenta una falla técnica relacionada con color, adaptación o morfología, esta deberá ser informada de inmediato y la prótesis <span className="text-white font-bold underline">No deberá ser cementada</span>, ya que la cementación compromete la garantía.</p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-xl font-bold text-[#0056A4] mb-3">GARANTIA EN DISILICATO DE LITIO</h3>
-                        <p className="text-justify text-[#94A3B8]">
-                            La garantía aplicará únicamente cuando la falla sea técnica de fabricación y siempre que no haya sido cementado, dado que el disilicato de litio es un material frágil antes de su cementación y puede fracturarse o astillarse bajo fuerzas masticatorias intensas o manipulación inadecuada.
+                    <div className="bg-black/30 border border-white/10 p-5 rounded-xl shadow-inner">
+                        <h4 className="text-white font-bold mb-2">Restricciones de Cementación</h4>
+                        <p className="text-white/90 text-sm leading-relaxed">
+                            Si se detecta una falla técnica (color, adaptación o morfología) en trabajos de Metal Porcelana o Disilicato de Litio, esta deberá ser informada de inmediato. <span className="text-[#4DA8DA] font-bold underline">La prótesis NO debe ser cementada</span>, ya que la cementación implica la aceptación del trabajo y compromete definitivamente la garantía.
                         </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-xl font-bold text-[#0056A4] mb-3">MATERIALES SIN GARANTÍA</h3>
-                        <p className="text-[#94A3B8] mb-3">Los siguientes materiales <span className="text-white font-bold">No cuentan con garantía</span> debido a su naturaleza de resina y plásticos de baja resistencia:</p>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
-                            {['Cerómero', 'PMMA', 'Resinas', 'Placas', 'Cubetas'].map(item => (
-                                <div key={item} className="bg-white/5 border border-white/10 p-2 rounded text-center text-[#E0E0E0]">{item}</div>
-                            ))}
-                        </div>
-                        <p className="text-sm text-[#94A3B8] mt-4">Los núcleos No poseen garantía, dado que el laboratorio únicamente realiza el colado conforme al patrón enviado por el odontólogo.</p>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2 className="text-2xl font-bold text-white mb-6 border-b border-[#0056A4]/30 pb-3">CONDICIONES GENERALES</h2>
+                <h2 className="text-2xl font-bold text-white mb-6 border-b border-[#4DA8DA]/30 pb-3">2. Condiciones Generales del Servicio</h2>
                 <div className="grid gap-4">
                     {[
-                        "Los cambios posteriores no serán tenidos en cuenta como fallas técnicas (cambio en tallas, color, impresiones defectuosas).",
-                        "Todos los casos son evaluados por un comité técnico para verificar fallas en los procesos.",
-                        "La devolución de dinero solo procede si la falla técnica persiste tras al menos una modificación.",
-                        "Es responsabilidad del profesional tomar una impresión fiel y adecuada.",
-                        "Todas las impresiones deben ser tomadas a un solo tiempo o a cuatro hands.",
-                        "En corrección de color en Zirconio, solo se puede oscurecer, no aclarar.",
-                        "No se debe retallar o hacer cambio clínico sin autorización previa por escrito.",
-                        "Retallar preparaciones originales o líneas terminales supragingivales afecta la garantía.",
-                        "Repeticiones de archivos STL se harán sobre el mismo archivo original.",
-                        "Las garantías se repiten en el mismo material inicialmente elaborado.",
-                        "Las garantías no son transferibles entre pacientes u odontólogos."
-                    ].map((idx, i) => (
-                        <div key={i} className="flex gap-4 items-start bg-white/5 p-4 rounded-xl border border-white/5 transition-colors hover:border-[#0056A4]/30 group">
-                            <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0056A4]/20 flex items-center justify-center text-[#0056A4] font-bold group-hover:bg-[#0056A4] group-hover:text-white transition-all">{i + 1}</span>
-                            <p className="text-[#94A3B8] group-hover:text-[#E0E0E0]">{idx}</p>
-                        </div>
-                    ))}
+                        "Fallas Técnicas vs. Cambios Posteriores: Modificaciones solicitadas posteriormente (cambios de talla, color, uso de silicona vencida, alginato o impresiones a dos tiempos) no serán catalogadas como fallas de fabricación.",
+                        "Responsabilidad de Impresión: La adaptación se realiza sobre el modelo obtenido de la impresión clínica. Es absoluta responsabilidad del profesional enviar una impresión fiel para garantizar un ajuste pasivo.",
+                        "Comité de Evaluación: Todo caso de garantía será evaluado rigurosamente por nuestro Comité Técnico para determinar el origen de la falla.",
+                        "Reembolsos: La devolución del dinero solo procederá legalmente cuando la falla técnica persista después de haberse realizado, al menos, una modificación sin resultado satisfactorio.",
+                        "Correcciones de Color en Zirconio: El Zirconio permite oscurecimiento clínico, pero no aclaramiento. Para aclarar una corona, se debe fabricar desde cero, facturándose como un trabajo nuevo.",
+                        "Alteraciones no Autorizadas: No se debe retallar o modificar clínicamente casos en curso sin autorización escrita del laboratorio. Alterar preparaciones asume el riesgo de inadaptación y pérdida de garantía.",
+                        "Flujo Digital (STL): En repeticiones, se fresará exactamente el mismo archivo STL anterior. Si el archivo es modificado por la clínica, se facturará como un trabajo nuevo.",
+                        "Intransferibilidad: Las garantías se repiten estrictamente en el mismo material facturado y son intransferibles entre pacientes o distintos profesionales."
+                    ].map((idx, i) => {
+                        const [title, desc] = idx.split(": ");
+                        return (
+                            <div key={i} className="flex gap-4 items-start bg-black/30 p-5 rounded-xl border border-white/5 transition-all hover:border-[#4DA8DA]/50 hover:bg-black/50 group shadow-lg">
+                                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-[#4DA8DA]/20 flex items-center justify-center text-[#4DA8DA] font-bold text-lg group-hover:bg-[#4DA8DA] group-hover:text-white shadow-inner">{i + 1}</span>
+                                <div>
+                                    <p className="text-white font-bold mb-1 text-lg">{title}:</p>
+                                    <p className="text-white/80 text-base leading-relaxed group-hover:text-white/95">{desc}</p>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </section>
 
-            <section className="bg-[#0056A4]/10 border border-[#0056A4]/20 p-8 rounded-[2.5rem]">
-                <h2 className="text-2xl font-bold text-white mb-6">REQUISITOS PARA RECLAMACIÓN</h2>
-                <ul className="grid md:grid-cols-2 gap-4 text-[#E0E0E0]">
-                    <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-[#0056A4]" /> Modelo Inicial</li>
-                    <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-[#0056A4]" /> Nueva Impresión Definitiva</li>
-                    <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-[#0056A4]" /> Registro de mordida</li>
-                    <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-[#0056A4]" /> Modelo antagonista</li>
-                    <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-[#0056A4]" /> Prótesis Inicial</li>
-                    <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-[#0056A4]" /> Registros fotográficos en boca</li>
+            <section className="bg-black/40 border border-[#4DA8DA]/30 p-8 rounded-[2.5rem] shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#4DA8DA] to-transparent"></div>
+                <h2 className="text-2xl font-bold text-white mb-6">3. Requisitos para Solicitar Garantías</h2>
+                <p className="text-white/90 text-lg mb-6">Para proceder con la evaluación, el profesional deberá remitir físicamente al laboratorio la siguiente documentación y elementos:</p>
+                <ul className="grid md:grid-cols-2 gap-5 text-white/95 text-lg mb-8">
+                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#4DA8DA]" /> Modelo Inicial</li>
+                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#4DA8DA]" /> Nueva Impresión Definitiva (en silicona)</li>
+                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#4DA8DA]" /> Registro de mordida actualizado</li>
+                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#4DA8DA]" /> Modelo antagonista</li>
+                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#4DA8DA]" /> Prótesis Inicial</li>
+                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#4DA8DA]" /> Registros fotográficos en boca</li>
+                    <li className="flex items-center gap-3 md:col-span-2 font-semibold text-[#4DA8DA]"><div className="w-2 h-2 rounded-full bg-[#4DA8DA]" /> Solicitud de Reclamación (Color, Material, Piezas y Distribución)</li>
                 </ul>
+                <div className="bg-[#4DA8DA]/10 border-l-4 border-[#4DA8DA] p-5 text-base text-white/90 rounded-r-lg shadow-inner">
+                    <span className="font-extrabold text-white">Importante:</span> De no allegarse la documentación completa, la fabricación se realizará única y exclusivamente bajo el criterio técnico del laboratorio.
+                </div>
             </section>
 
             <section>
-                <h2 className="text-2xl font-bold text-white mb-6 border-b border-[#0056A4]/30 pb-3">SOLICITUD DE GARANTÍAS</h2>
-                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                    <p className="text-[#94A3B8] mb-4">Enviar correo a: <span className="text-white font-bold">coordinadorpostventa@labmilanes.com</span></p>
-                    <p className="text-[#94A3B8] text-sm leading-relaxed">
-                        Respuesta dentro de los <span className="text-white">15 días hábiles</span> siguientes. En caso de información incompleta, se requerirá al cliente en un plazo de 5 días hábiles.
+                <h2 className="text-2xl font-bold text-white mb-6 border-b border-[#4DA8DA]/30 pb-3">4. Procedimiento y Exoneraciones</h2>
+                <div className="bg-black/30 border border-white/10 p-8 rounded-2xl mb-6 shadow-lg">
+                    <p className="text-white/95 text-lg mb-5">Para radicar formalmente un trámite, envíe una notificación al correo: <a href="mailto:coordinadorpostventa@labmilanes.com" className="text-[#4DA8DA] font-bold hover:underline hover:text-white transition-colors">coordinadorpostventa@labmilanes.com</a> incluyendo:</p>
+                    <ul className="list-disc pl-6 space-y-3 text-base text-white/90 mb-8">
+                        <li>Fecha de recepción del producto.</li>
+                        <li>Nombres completos (paciente y profesional tratante).</li>
+                        <li>Producto objeto de la reclamación.</li>
+                        <li>Datos de contacto (Cédula/NIT, teléfono, dirección).</li>
+                        <li><span className="text-white font-bold">Relato detallado:</span> Explicar cómo, cuándo y dónde ocurrió el inconveniente.</li>
+                    </ul>
+                    
+                    <h4 className="text-[#4DA8DA] font-bold text-lg mb-2">Tiempos de Respuesta Legal</h4>
+                    <p className="text-white/90 text-base leading-relaxed mb-6">
+                        Respuesta formal dentro de los <span className="text-white font-bold">quince (15) días hábiles</span> siguientes a la recepción completa. Si la solicitud presenta información faltante, se requerirá al cliente en un plazo máximo de 5 días hábiles, quien tendrá 10 días para subsanar.
                     </p>
-                    <div className="mt-6 p-4 border-l-4 border-[#0056A4] bg-[#0056A4]/5">
-                        <p className="text-xs text-[#94A3B8] italic">
-                            De conformidad con el art. 16 ley 1480 de 2011, el laboratorio queda exonerado por fuerza mayor, hecho de un tercero, uso indebido o inobservancia de instrucciones.
+                    
+                    <div className="mt-8 p-5 border border-white/10 bg-[#000000]/60 rounded-xl shadow-inner">
+                        <h4 className="text-white font-bold mb-3 text-base">Exoneración de Responsabilidad (Art. 16 Ley 1480 de 2011)</h4>
+                        <p className="text-sm text-white/70 italic leading-relaxed">
+                            El laboratorio quedará totalmente exonerado frente a daños cuando el defecto derive de: (1) Fuerza mayor o caso fortuito. (2) Hecho de un tercero. (3) Uso indebido del producto. (4) Omisión a las instrucciones de instalación, uso o cementación.
                         </p>
                     </div>
                 </div>

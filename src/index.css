@@ -4,87 +4,90 @@
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
   --font-sans: 'Inter', system-ui, sans-serif;
 
-  /* ── Deep Night Blue (Dark Mode Premium) ────────────────────
-   * Fondo Base   → #020B1D  (Night Blue)
-   * Texto        → #FFFFFF  (Blanco puro)
-   * Texto Secun  → #94A3B8 / #A0AEC0 (Gris secundario)
-   * Acento       → #0052FF  (Electric Cobalt Neon)
+  /* ── Original Palette with HDR Depth ────────────────────────
+   * Base Depth    → #010816 (Deepened Original)
+   * Original Blue → #0052FF (Cobalt Electric)
+   * Original Em   → #10B981 (Emerald)
    * ──────────────────────────────────────────────────────────── */
-  --bg-primary: #020B1D;
+  --bg-primary: #010816;
   --color-surface: var(--bg-primary);
-  --color-surface-muted: #051025;
-  --color-surface-card: #0A152C;
+  --color-surface-muted: #020B1D;
+  --color-surface-card: #040E24;
 
   --color-text-primary: #FFFFFF;
-  /* títulos y alta legibilidad */
   --color-text-dim: #A0AEC0;
-  /* texto secundario / subtítulos */
   --color-text-muted: #94A3B8;
-  /* placeholders, labels tenues */
 
-  --color-brand: #0052FF;
-  /* azul cobalto eléctrico */
+  --color-brand: #0052FF; 
   --color-brand-dark: #003DCC;
-  /* hover de marca */
   --color-brand-light: #4D8BFF;
 
   --color-border: rgba(255, 255, 255, 0.1);
-  /* bordes 1px sutiles tech */
   --color-border-focus: var(--color-brand);
 
-  /* Sombra tech neon (sin blancos invasivos) */
-  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.4);
-  --shadow-card-hover: 0 8px 32px rgba(0, 82, 255, 0.1), 0 2px 12px rgba(0, 0, 0, 0.5);
-
-  /* Sombra Glow */
-  --shadow-neon: 0 0 20px rgba(0, 82, 255, 0.5);
+  /* Cinematic Contrast Shadows */
+  --shadow-card: 0 12px 48px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-card-hover: 0 24px 72px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 82, 255, 0.15);
+  --shadow-neon: 0 0 25px rgba(0, 82, 255, 0.4), 0 0 50px rgba(0, 82, 255, 0.1);
 
   /* Botones Expert Style */
   --btn-bg: var(--color-brand);
   --btn-text: #FFFFFF;
-  --btn-radius: 8px;
-  --btn-padding: 12px 24px;
+  --btn-radius: 10px;
+  --btn-padding: 13px 26px;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: var(--bg-primary);
   }
 
   body {
-    background-color: var(--bg-primary);
-    /* #020B1D */
+    /* Original Gradient with Cinematic Fixation */
+    background: linear-gradient(135deg, #6FD3C1 0%, #3B82F6 100%);
+    background-attachment: fixed;
     color: var(--color-text-primary);
-    /* #FFFFFF */
     font-family: var(--font-sans);
     font-size: 1.05rem;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
+    /* Cinematic Contrast Curve (Pure Luminance) */
+    filter: contrast(1.08) brightness(1.03);
   }
 
-  /* Contraste WCAG AAA: #020D21 sobre #FFFFFF → ratio ~18.8:1 ✓ */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-primary);
+    font-family: var(--font-sans), sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    /* HDR Highlight Pop */
+    text-shadow: 0 4px 15px rgba(0,0,0,0.7), 0 0 30px rgba(255,255,255,0.08);
+    margin-bottom: 1.25rem;
+  }
+
+  p, li, span {
+    font-weight: 400;
+    color: var(--color-text-dim);
+  }
+
+  b, strong {
+    color: #FFFFFF;
     font-weight: 600;
-    line-height: 1.25;
-  }
-
-  p,
-  li,
-  span {
-    font-weight: 300;
-    color: var(--color-text-primary);
   }
 
   :focus-visible {
     outline: 2px solid var(--color-brand);
     outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-main {
+    background: linear-gradient(135deg, #6FD3C1 0%, #3B82F6 100%);
   }
 }
 
@@ -94,27 +97,24 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.65rem;
     background-color: var(--color-brand);
-    color: var(--btn-text);
-    border-radius: 8px;
-    /* smooth rounding */
+    color: #FFFFFF;
+    border-radius: var(--btn-radius);
     padding: var(--btn-padding);
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.01em;
-    border: 1px solid transparent;
+    border: 1px solid rgba(255,255,255,0.1);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0, 82, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 82, 255, 0.25);
   }
 
   .btn-primary:hover {
     background-color: var(--color-brand-light);
-    /* más claro en oscuros resalta más */
     box-shadow: var(--shadow-neon);
-    /* Neon Glow Effect */
     transform: translateY(-2px);
   }
 
@@ -122,28 +122,25 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    background-color: transparent;
-    color: var(--color-text-primary);
-    border-radius: 8px;
+    gap: 0.65rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+    border-radius: var(--btn-radius);
     padding: var(--btn-padding);
     font-size: 0.95rem;
     font-weight: 500;
     letter-spacing: 0.01em;
     border: 1px solid var(--color-border);
+    backdrop-filter: blur(12px);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     text-decoration: none;
   }
 
   .btn-outline:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    /* fondo sutil translúcido */
-    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.1);
     border-color: var(--color-brand);
-    /* Borde neón sutil */
-    box-shadow: 0 4px 16px rgba(0, 82, 255, 0.15);
-    /* Soft neon */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
   }
 }
@@ -154,15 +151,12 @@
     transition: scroll-position 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
-  /* Hide scrollbar functionality */
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
 
   .hide-scrollbar {
     -ms-overflow-style: none;
-    /* IE and Edge */
     scrollbar-width: none;
-    /* Firefox */
   }
 }

@@ -4,6 +4,17 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import { MisionVision, NuestraGente, Tecnologia, Blog, PoliticasGarantia } from './pages/Pages';
 import Sucursales from './pages/Sucursales';
+import Admin from './pages/Admin';
+import TrabajaConNosotros from './pages/TrabajaConNosotros';
+import SolicitarCatalogo from './pages/SolicitarCatalogo';
+import Agencias from './pages/Agencias';
+import ZirLuxor from './pages/ZirLuxor';
+import ZirconioZR7 from './pages/ZirconioZR7';
+import SolicitudPedido from './pages/SolicitudPedido';
+import Registro from './pages/Registro';
+import MiLab from './pages/MiLab';
+import ProtectedRoute from './components/ProtectedRoute';
+
 
 // ScrollToTop component to reset scroll on route change
 import { useEffect } from 'react';
@@ -37,6 +48,43 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/politicas-garantia" element={<PoliticasGarantia />} />
             <Route path="/sucursales" element={<Sucursales />} />
+            <Route path="/trabaja-con-nosotros" element={<TrabajaConNosotros />} />
+            <Route path="/solicitar-catalogo" element={<SolicitarCatalogo />} />
+            <Route path="/solicitud-pedido" element={<SolicitudPedido />} />
+            <Route path="/zir-luxor" element={<ZirLuxor />} />
+            <Route path="/zirconio-zr7" element={<ZirconioZR7 />} />
+            <Route path="/agencias/:zone" element={<Agencias />} />
+            <Route path="/admin" element={
+              <ProtectedRoute requireAdmin={true}>
+                <Admin />
+              </ProtectedRoute>
+            } />
+            <Route path="/registro" element={<Registro />} />
+            <Route path="/milab" element={
+              <ProtectedRoute>
+                <MiLab section="usuario" />
+              </ProtectedRoute>
+            } />
+            <Route path="/milab/usuario" element={
+              <ProtectedRoute>
+                <MiLab section="usuario" />
+              </ProtectedRoute>
+            } />
+            <Route path="/milab/eventos" element={
+              <ProtectedRoute>
+                <MiLab section="eventos" />
+              </ProtectedRoute>
+            } />
+            <Route path="/milab/talleres" element={
+              <ProtectedRoute>
+                <MiLab section="talleres" />
+              </ProtectedRoute>
+            } />
+            <Route path="/milab/triangulo" element={
+              <ProtectedRoute>
+                <MiLab section="triangulo" />
+              </ProtectedRoute>
+            } />
           </Routes>
         </main>
 
@@ -45,23 +93,28 @@ function App() {
         {/* ── Footer Sticky 100% Ancho (Deep Night Background base en body) ── */}
         <footer className="w-full border-t border-[rgba(255,255,255,0.05)] mt-auto">
 
-          {/* ── Sección principal: Logo | Mapa ─────────────────────────── */}
-          <div className="w-full max-w-[1200px] mx-auto py-14 px-6 md:px-12 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-[50px]">
-
-            {/* Columna izquierda — Imagen de marca */}
-            <div className="w-full md:w-1/2 max-w-[500px] h-[320px] flex justify-center items-center bg-[#0a162d] rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.5)] border border-[rgba(255,255,255,0.05)]">
-              <img
-                src={footerBanner}
-                alt="Laboratorio Dental Luis Milanes"
-                className="w-full h-fw-[80%] h-[80%] object-contain"
-              />
+          {/* ── Sección de Cobertura Nacional y Mapa ─────────────────────────── */}
+          <div className="w-full flex flex-col md:flex-row bg-transparent">
+            {/* Columna izquierda — Imagen del Banner de Cobertura */}
+            <div className="w-full md:w-1/2 flex justify-center items-center bg-[#f4f4f4] relative overflow-hidden">
+                {/* 
+                  AQUÍ VA TU IMAGEN. 
+                  Asegúrate de cambiar "cobertura.png" por el nombre exacto de la imagen que exportaste 
+                  (y verifica que esté dentro de la carpeta 'public').
+                  La clase 'object-contain' evita que se distorsione. 
+                */}
+                <img 
+                    src={footerBanner} 
+                    alt="Aumentamos nuestra cobertura nacional"
+                    className="w-full h-auto object-contain max-h-[500px]"
+                />
             </div>
 
             {/* Columna derecha — Google Map */}
-            <div className="w-full md:w-1/2 max-w-[500px] h-[320px] flex justify-center items-center bg-[#0a162d] rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.5)] border border-[rgba(255,255,255,0.05)]">
+            <div className="w-full md:w-1/2 h-[400px] md:h-auto min-h-[450px]">
               <iframe
-                title="Ubicación Laboratorio Dental Luis Milanes"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254508.27407313226!2d-76.61731!3d3.42158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a6f0a0000001%3A0x0!2sCali%2C+Colombia!5e0!3m2!1ses!2sco!4v1700000000000"
+                title="Cobertura Nacional Laboratorio Dental Luis Milanes"
+                src="https://www.google.com/maps/d/embed?mid=1TwizR-fa5p_jF562mlL3GGWzXlvysvU&hl=es-419&ehbc=2E312F"
                 className="w-full h-full border-0"
                 allowFullScreen=""
                 loading="lazy"

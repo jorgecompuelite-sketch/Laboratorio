@@ -70,7 +70,7 @@ const Catalogo = () => {
                         <Download size={16} />
                         <span className="hidden sm:inline">Descargar PDF</span>
                     </a>
-                    <div className="flex bg-white rounded-full shadow p-1">
+                    <div className="flex bg-transparent rounded-full shadow p-1">
                         <button onClick={() => setScale(s => Math.min(s + 0.1, 2.0))} className="p-2 hover:bg-slate-50 rounded-full text-slate-600"><ZoomIn size={20} /></button>
                         <button onClick={() => setScale(s => Math.max(s - 0.1, 0.4))} className="p-2 hover:bg-slate-50 rounded-full text-slate-600"><ZoomOut size={20} /></button>
                     </div>
@@ -95,16 +95,16 @@ const Catalogo = () => {
                         {/* Renderizado Condicional para Modo Libro */}
 
                         {/* Página Izquierda (o Portada) */}
-                        <div className={cn("transition-all duration-300 bg-white relative", isFirstPage ? "shadow-xl" : "border-r border-slate-200")}>
+                        <div className={cn("transition-all duration-300 bg-transparent relative", isFirstPage ? "shadow-xl" : "border-r border-slate-200")}>
                             <Page
                                 key={`page_${pageNumber}`}
                                 pageNumber={pageNumber}
                                 scale={scale}
                                 renderAnnotationLayer={false}
                                 renderTextLayer={false}
-                                className="bg-white"
+                                className="bg-transparent"
                                 loading={
-                                    <div className="w-[400px] h-[600px] bg-white flex items-center justify-center">
+                                    <div className="w-[400px] h-[600px] bg-transparent flex items-center justify-center">
                                         <Loader2 className="animate-spin text-slate-300" />
                                     </div>
                                 }
@@ -116,16 +116,16 @@ const Catalogo = () => {
 
                         {/* Página Derecha (Solo si no es portada y existe) */}
                         {!isFirstPage && (pageNumber + 1) <= numPages && (
-                            <div className="hidden lg:block transition-all duration-300 bg-white relative">
+                            <div className="hidden lg:block transition-all duration-300 bg-transparent relative">
                                 <Page
                                     key={`page_${pageNumber + 1}`}
                                     pageNumber={pageNumber + 1}
                                     scale={scale}
                                     renderAnnotationLayer={false}
                                     renderTextLayer={false}
-                                    className="bg-white"
+                                    className="bg-transparent"
                                     loading={
-                                        <div className="w-[400px] h-[600px] bg-white flex items-center justify-center">
+                                        <div className="w-[400px] h-[600px] bg-transparent flex items-center justify-center">
                                             <Loader2 className="animate-spin text-slate-300" />
                                         </div>
                                     }
@@ -144,14 +144,14 @@ const Catalogo = () => {
                 {!loading && (
                     <>
                         <button
-                            className="absolute left-2 md:left-8 z-20 p-3 bg-white/90 backdrop-blur shadow-lg rounded-full hover:bg-primary hover:text-white transition-all text-slate-700 disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-slate-700 disabled:cursor-not-allowed"
+                            className="absolute left-2 md:left-8 z-20 p-3 bg-white/90 backdrop-blur shadow-lg rounded-full hover:bg-primary hover:text-white transition-all text-slate-700 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-slate-700 disabled:cursor-not-allowed"
                             onClick={prevPage}
                             disabled={pageNumber <= 1}
                         >
                             <ChevronLeft size={32} />
                         </button>
                         <button
-                            className="absolute right-2 md:right-8 z-20 p-3 bg-white/90 backdrop-blur shadow-lg rounded-full hover:bg-primary hover:text-white transition-all text-slate-700 disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-slate-700 disabled:cursor-not-allowed"
+                            className="absolute right-2 md:right-8 z-20 p-3 bg-white/90 backdrop-blur shadow-lg rounded-full hover:bg-primary hover:text-white transition-all text-slate-700 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-slate-700 disabled:cursor-not-allowed"
                             onClick={nextPage}
                             disabled={pageNumber >= numPages || (pageNumber + 1 >= numPages && window.innerWidth >= 1024)} // Deshabilitar si es última o última pareja
                         >
